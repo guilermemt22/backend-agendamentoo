@@ -1,4 +1,3 @@
-```javascript
 require("dotenv").config();
 const express = require("express");
 const admin = require("firebase-admin");
@@ -23,10 +22,9 @@ app.post("/webhook-agendamento", async (req, res) => {
     await admin.messaging().send({
       topic: "admin",
       notification: {
-  title: "Novo agendamento recebido",
-  body: nome + " • " + data + " às " + hora
-}
-      }
+        title: "Novo agendamento recebido",
+        body: nome + " • " + data + " às " + hora,
+      },
     });
 
     res.send({ ok: true });
