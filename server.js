@@ -23,8 +23,9 @@ app.post("/webhook-agendamento", async (req, res) => {
     await admin.messaging().send({
       topic: "admin",
       notification: {
-        title: "Novo agendamento recebido",
-        body: `${nome} • ${data} às ${hora}`
+  title: "Novo agendamento recebido",
+  body: nome + " • " + data + " às " + hora
+}
       }
     });
 
